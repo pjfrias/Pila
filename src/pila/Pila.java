@@ -69,22 +69,21 @@ public class Pila {
     
     public void invierteEficiente(Pila temp){
         int valor;
-        int contador=0;
-        for (int i = 0; i < arreglo.length-1; i++) {
+        
+        for (int i = 0; i <= this.tope; i++) {
             
             valor = this.verElemento();
             this.pop();
             
-            for (int j = 0; j < this.tope-contador; j++) {
+            while((this.tope-i) >=0){
                 temp.push(this.pop());
             }
-            
+        
             this.push(valor);
             
-            for (int j = 0; j < temp.tope; j++) {
+            while(temp.tope>=0) {
                 this.push(temp.pop());
             }
-            contador ++;
         }
     }
     

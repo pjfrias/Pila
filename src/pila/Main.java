@@ -26,22 +26,22 @@ public class Main {
         
         pila.verPila();
         
-        System.out.println("pila llena ="+pila.pilaLlena());
-        System.out.println("pila vacia ="+pila.pilaVacia());
-        
-        System.out.println("ultimo elemento ="+pila.verElemento());
-        
-//        for (int i = 0; i < 10; i++) {
-//            System.out.println(pila.pop());
-//        }
-        
-        System.out.println("pila llena ="+pila.pilaLlena());
-        System.out.println("pila vacia ="+pila.pilaVacia());
-        
-        Pila pila2 = new Pila(10);
+//        System.out.println("pila llena ="+pila.pilaLlena());
+//        System.out.println("pila vacia ="+pila.pilaVacia());
+//        
+//        System.out.println("ultimo elemento ="+pila.verElemento());
+//        
+////        for (int i = 0; i < 10; i++) {
+////            System.out.println(pila.pop());
+////        }
+//        
+//        System.out.println("pila llena ="+pila.pilaLlena());
+//        System.out.println("pila vacia ="+pila.pilaVacia());
+//        
+//        Pila pila2 = new Pila(10);
         Pila pila3 = new Pila(10);
         
-        pila.invierteEficiente(pila2);
+        pila.invierteEficiente(pila3);
         pila.verPila();
     }
 
