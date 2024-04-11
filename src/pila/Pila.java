@@ -48,7 +48,7 @@ public class Pila {
     }
     
     public boolean pilaLlena(){
-        return (tope == arreglo.length-1);
+        return (tope == tamanio-1);
     }
     
     public int verElemento(){
