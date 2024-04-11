@@ -12,14 +12,17 @@ package pila;
 public class Pila {
     private int[] arreglo;
     private int tope;
+    private int tamanio;
     
     public Pila(int tamanio){
         arreglo = new int[tamanio];
         tope = -1;
+        this.tamanio = tamanio;
+        
     }
     
     public void push(int nro){
-        if (tope < arreglo.length-1) {
+        if (!pilaLlena()) {
             tope ++;
             arreglo[tope] = nro;
             
@@ -29,7 +32,7 @@ public class Pila {
     
     public int pop(){
         int retorno;
-        if (tope >= 0) {
+        if (!pilaVacia()) {
            retorno = arreglo[tope];
            tope --;
            return retorno;
@@ -52,22 +55,26 @@ public class Pila {
         return arreglo[tope];
     }
     
-    public void invierteSimple(Pila temp1, Pila temp2){
+    public void invierteSimple(){
+        Pila temp1 = new Pila(tamanio);
+        Pila temp2 = new Pila(tamanio);
+        
         if (!pilaVacia()) {
             
-         for (int i = 0; i < arreglo.length; i++) {
+            while (!this.pilaVacia()) {                
                 temp1.push(this.pop());
             }
-            for (int i = 0; i < arreglo.length; i++) {
+            while (!temp1.pilaVacia()) { 
                 temp2.push(temp1.pop());
             }
-            for (int i = 0; i < arreglo.length; i++) {
+            while (!temp2.pilaVacia()) { 
                 this.push(temp2.pop());
             }
         }
     }
     
-    public void invierteEficiente(Pila temp){
+    public void invierteEficiente(){
+        Pila temp = new Pila(tamanio);
         int valor;
         
         for (int i = 0; i <= this.tope; i++) {
@@ -81,14 +88,14 @@ public class Pila {
         
             this.push(valor);
             
-            while(temp.tope>=0) {
+            while(!temp.pilaVacia()) {
                 this.push(temp.pop());
             }
         }
     }
     
     public void verPila(){
-        for (int i = 0; i <= arreglo.length-1; i++) {
+        for (int i = 0; i <= this.tope; i++) {
             System.out.println(arreglo[i]);
         }
     }
